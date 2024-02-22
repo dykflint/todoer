@@ -1,31 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form id="add-task-form">
-        <div id="task">
+    <header id="header">
+    </header>
+    <div id="sidebar">
+        <div id="projects-sidebar">
+            <ul id="list-of-projects">
+            </ul>
+        </div>
+    </div>
+    <div id="table-div">
+        <button id="toggle-task-form">+</button>
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Task</th>
+                    <th>Due</th>
+                    <th>Priority</th>
+                    <th>Project</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <form id="add-task-form" class="hide">
+        <div id="task-title">
             <label for="task-title">Task:</label>
             <input type="text" name="task-title" placeholder="..." required>
         </div>
-        <div id="due-and-prio">
+        <div id="due-date">
             <label for="due-date">Due:</label>
             <input type="date" name="due-date" required>
-            <select name="prio" id="prio">
-                <option value="low">LOW</option>
-                <option value="mid">MID</option>
-                <option value="high">HIGH</option>
-            </select>
         </div>
-        <div id="description">
-            <label for="description">Notes:</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <div id="prio">
+            <div id="low-prio-container">
+                <label for="low-prio">Low</label>
+                <input type="radio" name="prio" id="low-prio" value="low">
+            </div>
+            <div id="mid-prio-container">
+                <label for="mid-prio">Mid</label>
+                <input type="radio" name="prio" id="mid-prio" value="mid" checked>
+            </div>
+            <div id="high-prio-container">
+                <label for="high-prio">High</label>
+                <input type="radio" name="prio" id="high-prio" value="high">
+            </div>
         </div>
-        <button id="submit-task">Add Task</button>
+        <div id="project">
+            <label for="project">Project:</label>
+            <input type="text" name="project">
+        </div>
+        <div id="form-buttons">
+            <div id="add-button">
+                <button id="submit-task">Add Task</button>
+            </div>
+        </div>
+    </form>
+    <form id="edit-task-form" class="hide">
+        <div id="chosen-row-index" class="hide"></div>
+        <div id="close-edit-form">Close</div>
+        <div id="edit-task-title">
+            <label for="edit-task-title">Task:</label>
+            <input type="text" name="edit-task-title" placeholder="..." required>
+        </div>
+        <div id="edit-due-date">
+            <label for="edit-due-date">Due:</label>
+            <input type="date" name="edit-due-date" required>
+        </div>
+        <div id="edit-prio">
+            <div id="edit-low-prio-container">
+                <label for="edit-low-prio">Low</label>
+                <input type="radio" name="edit-prio" id="edit-low-prio" value="low">
+            </div>
+            <div id="edit-mid-prio-container">
+                <label for="edit-mid-prio">Mid</label>
+                <input type="radio" name="edit-prio" id="edit-mid-prio" value="mid" checked>
+            </div>
+            <div id="edit-high-prio-container">
+                <label for="edit-high-prio">High</label>
+                <input type="radio" name="edit-prio" id="edit-high-prio" value="high">
+            </div>
+        </div>
+        <div id="edit-project">
+            <label for="edit-project">Project:</label>
+            <input type="text" name="edit-project">
+        </div>
+        <div id="edit-form-buttons">
+            <div id="edit-and-remove-buttons" class="">
+                <button id="edit-task" class="">Edit Task</button>
+                <button id="remove-task" class="">Remove</button>
+            </div>
+        </div>
     </form>
 </body>
 <script src="main.js"></script>
+
 </html>
