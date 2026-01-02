@@ -34,11 +34,12 @@ This project demonstrates core frontend engineering skills without relying on fr
 ## Project Structure
 
 src/
-├── index.js # Main application logic
-├── style.css # Base styling
-├── checkbox.css # Checkbox and task completion styles
-├── headerImage.js # Header UI logic
-├── checkLocalStorage.js # LocalStorage availability check
+
+- index.js # Main application logic
+- style.css # Base styling
+- checkbox.css # Checkbox and task completion styles
+- headerImage.js # Header UI logic
+- checkLocalStorage.js # LocalStorage availability check
 
 ---
 
