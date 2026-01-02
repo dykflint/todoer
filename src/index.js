@@ -13,7 +13,6 @@ function addEventListenerWithTracking(element, event, callback) {
   element._eventListeners[event].push(callback);
   element.addEventListener(event, callback);
 }
-
 // Function to remove all event listeners
 function removeAllEventListeners(element, event) {
   if (element._eventListeners && element._eventListeners[event]) {
@@ -104,6 +103,8 @@ function activateRowEditEvents(table) {
     });
   }
 }
+const test = document.querySelector(".test");
+
 // Edit tasks
 const editForm = document.querySelector("#edit-task-form");
 const closeEditForm = document.querySelector("#close-edit-form");
@@ -111,6 +112,7 @@ closeEditForm.addEventListener("click", () => {
   editForm.classList.add("hide");
   activateRowEditEvents(taskTable);
 });
+
 function fillEditForm(tableBody, tr) {
   // Chosen row elements
   const chosenRow = Array.from(tr.getElementsByTagName("td"));
@@ -215,6 +217,7 @@ function setTableIds(table) {
   });
   activateCheckboxEvents();
 }
+
 const listOfProjects = ["show all", "unassigned"];
 function collectProjects(table) {
   Array.from(taskTable.rows).forEach((row, index) => {
